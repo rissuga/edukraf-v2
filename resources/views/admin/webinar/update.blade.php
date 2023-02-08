@@ -44,7 +44,8 @@
                             </div>
                         @endif
 
-                        <form action="{{ url("$rootLink/do-update/$webinar->id") }}" method="POST">
+                        <form action="{{ url("$rootLink/do-update/$webinar->id") }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
 
                             <div class="row">

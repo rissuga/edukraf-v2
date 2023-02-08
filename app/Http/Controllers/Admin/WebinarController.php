@@ -62,8 +62,8 @@ class WebinarController extends Controller
 
         $data = $request->all();
         
-        if ($request->hasFile('foto')) {
-            $path= $request->file('foto')->store('webinarfoto');
+        if ($request->hasFile('cover')) {
+            $path= $request->file('cover')->store('webinarfoto');
         } else {
             $path= ' ';
         }
@@ -78,7 +78,7 @@ class WebinarController extends Controller
             'link_record'  => $data['link_record'],
             'link_webinar' => $data['link_webinar'],
             'speaker'      => $data['speaker'],
-            'cover'        => $data['cover'],
+            'cover'        => $path,
         ]);
 
         $this->message("Data Berhasil Ditambahkan", 'success');
@@ -115,6 +115,13 @@ class WebinarController extends Controller
         ]);
 
         $data = $request->all();
+
+        if ($request->hasFile('cover')) {
+            $path= $request->file('cover')->store('webinarfoto');
+        } else {
+            $path= ' ';
+        }
+
        
         DB::table("webinar")
         ->where("id", $id)
@@ -127,7 +134,7 @@ class WebinarController extends Controller
                 'link_record'  => $data['link_record'],
                 'link_webinar' => $data['link_webinar'],
                 'speaker'      => $data['speaker'],
-                'cover'        => $data['cover'],
+                'cover'        => $path,
             ]);
 
         $this->message("Data Berhasil Ubah", 'success');
