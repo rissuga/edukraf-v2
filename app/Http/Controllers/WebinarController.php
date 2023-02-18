@@ -19,9 +19,11 @@ class WebinarController extends Controller
     {
         $rootLink = $this->rootLink;
 
-        // $webinar = DB::table('webinar')->get();
-    
-        return view("$rootLink/list");
+        $webinar = DB::table('webinar')->get();
+
+        return view("$rootLink/list", 
+        compact("webinar", "rootLink")
+    );
     }
 
     public function detail()

@@ -19,8 +19,8 @@
                     <div class="card card-button card-default" onclick="window.location='{{ url('webinar/detail') }}'">
                         <div class="card-body">
                             <!-- <div class="position-absolute p-2 badge bg-warning m-2">
-                                                                                            <p class="mb-0">Sold Out!</p>
-                                                                                        </div> -->
+                                                                                                    <p class="mb-0">Sold Out!</p>
+                                                                                                </div> -->
                             <img class="card-img-top" src="{{ asset('assets/pragmatic-ui/img/kelas4.jpg') }}" alt="Test"
                                 style="height: 300px; object-fit: cover; ">
                             <div class="card-content p-1" style="width:auto;">
