@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ListClassController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ClassController;
+use App\Http\Controllers\WebinarController as WebinarFrontController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +22,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+//TAMPILAN DEPAN 
+Route::group([
+    'prefix' => '', 
+], function () {
+    Route::get('/', [HomeController::class, 'index']);
+    Route::get('ensiklopedia', [HomeController::class, 'ensiklopedia']);
+    Route::get('komunitas', [HomeController::class, 'komunitas']);
+    Route::get('tentang-kami', [HomeController::class, 'aboutUs']);
+
+    Route::group([
+        'prefix' => 'class', 
+    ], function () {
+        Route::get('category', [ClassController::class, 'index']);
+        Route::get('list', [ClassController::class, 'list']);
+        Route::get('detail', [ClassController::class, 'detail']);
+    });
+
+    Route::group([
+        'prefix' => 'webinar', 
+    ], function () {
+        Route::get('list', [WebinarFrontController::class, 'list']);
+        Route::get('detail', [WebinarFrontController::class, 'detail']);
+    });
+
+
+});
+
+
 
 Route::get('login', [AuthController::class, 'index'])->name("login");
 
@@ -31,6 +60,7 @@ Route::group(['prefix' => 'auth/'], function () {
     Route::post("do-register", [AuthController::class, "doRegister"]);
     Route::get('logout', [AuthController::class, 'doLogout']);
 });
+
 
 // ADMIN MENU
 Route::group([
