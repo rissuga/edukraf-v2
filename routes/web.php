@@ -31,6 +31,7 @@ Route::group([
     Route::get('komunitas', [HomeController::class, 'komunitas']);
     Route::get('tentang-kami', [HomeController::class, 'aboutUs']);
 
+
     Route::group([
         'prefix' => 'class', 
     ], function () {
