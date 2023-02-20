@@ -31,25 +31,25 @@ Route::group([
     Route::get('komunitas', [HomeController::class, 'komunitas']);
     Route::get('tentang-kami', [HomeController::class, 'aboutUs']);
 
-
     Route::group([
         'prefix' => 'class', 
     ], function () {
         Route::get('category', [ClassController::class, 'index']);
-        Route::get('list', [ClassController::class, 'list']);
-        Route::get('detail', [ClassController::class, 'detail']);
+        Route::get('list{id}', [ClassController::class, 'list'])->name('list-class');
+        Route::get('detail{id}', [ClassController::class, 'detail'])->name('detail-class');
     });
 
     Route::group([
         'prefix' => 'webinar', 
     ], function () {
         Route::get('list', [WebinarFrontController::class, 'list']);
-        Route::get('detail', [WebinarFrontController::class, 'detail']);
+        Route::get('detail{id}', [WebinarFrontController::class, 'detail'])->name('detail');
+        Route::get('webinar', [WebinarFrontController::class, 'showAll'])->name('webinar');
+        Route::get('webinar-soon', [WebinarFrontController::class, 'showAll'])->name('webinar');
+        Route::get('webinar-soon', [WebinarFrontController::class, 'showSoon'])->name('webinar-soon');
+        Route::get('webinar-done', [WebinarFrontController::class, 'showDone'])->name('webinar-done');
     });
-
-
 });
-
 
 
 Route::get('login', [AuthController::class, 'index'])->name("login");
@@ -114,7 +114,4 @@ Route::group([
         Route::post('do-update/{id}', [ListClassController::class, 'doUpdate']);
         Route::get('do-delete/{id}', [ListClassController::class, 'doDelete']);
     });
-
-
-
 });

@@ -1,19 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+use App\Models\Webinar;
 
 class WebinarController extends Controller
 {
-    //
+    
     public function __construct()
     {
         $this->pageName = "webinar";
 
         $this->rootLink = "$this->pageName";
     }
-
 
     public function list()
     {
@@ -26,12 +27,45 @@ class WebinarController extends Controller
     );
     }
 
-    public function detail()
+    public function detail($id)
     {
         $rootLink = $this->rootLink;
 
-        // $webinar = DB::table('webinar')->get();
-    
-        return view("$rootLink/detail");
+        $webinar = DB::table('webinar')->where("id", $id)->first();
+        $select = DB::table('webinar')->paginate(4);
+        $webinars = Webinar::orderBy('date', 'desc')->limit(2)->get();
+
+        // dd($webinar->cover);
+        return view("$rootLink/detail",
+        compact( "webinar","webinars", "rootLink", "select"));
     }
+
+    public function showAll()
+    {
+        $rootLink = $this->rootLink;
+
+        $webinar = DB::table('webinar')->get();
+        return view("$rootLink/list", compact('webinar'));
+    }
+
+
+    public function showSoon()
+    {   
+        $rootLink = $this->rootLink;
+
+        $now = Carbon::now()->timestamp;
+        $webinar = DB::table('webinar')->whereDate('date','>',now())->get();
+        // dd($webinar);
+        return view("$rootLink/list", compact('webinar'));
+    }
+    
+    public function showDone()
+    {   
+        $rootLink = $this->rootLink;
+
+        $now = Carbon::now()->timestamp;
+        $webinar = Webinar::whereDate('date','<',now())->get();
+        return view("$rootLink/list", compact('webinar'));
+    }
+
 }

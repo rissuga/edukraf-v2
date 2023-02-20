@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
+use App\Models\ListClass;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ClassController extends Controller
@@ -17,31 +19,34 @@ class ClassController extends Controller
         $this->rootLink = "$this->pageName";
     }
 
-
     public function index()
     {
         $rootLink = $this->rootLink;
 
-        // $webinar = DB::table('webinar')->get();
+        $category = DB::table('category')->get();
     
-        return view("$rootLink/category");
+        return view("$rootLink/category",
+        compact("category", "rootLink")
+    );
     }
 
-    public function list()
+    public function list( $cat)
+    {
+        $class = ListClass::where('category_id', $cat)->get();
+        $category = Category::find($cat);
+        return view('class.list' ,compact('class','category'));
+    }
+
+    public function detail($id)
     {
         $rootLink = $this->rootLink;
 
-        // $webinar = DB::table('webinar')->get();
-    
-        return view("$rootLink/list");
-    }
+        $class= ListClass::find($id);
+        $select = ListClass::paginate(3);
+        $category = Category::where('id', '==', $class->category_id)->get(['title_category']);
 
-    public function detail()
-    {
-        $rootLink = $this->rootLink;
-
-        // $webinar = DB::table('webinar')->get();
-    
-        return view("$rootLink/detail");
+        // dd($category->title_category);
+        return view("$rootLink/detail",
+        compact( "class", "rootLink", "select", "category"));
     }
 }
