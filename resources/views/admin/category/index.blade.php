@@ -39,7 +39,7 @@
                                 <th>No</th>
                                 <th>Kategori</th>
                                 <th>Deskripsi</th>
-                                <th>Aksi</th>
+                                <th width="160px">Aksi</th>
                             </thead>
                             <tbody>
                                 @foreach ($category as $key => $categories)

@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\ListClass;
+use App\Models\Classroom;
 use Illuminate\Support\Facades\DB;
 
 
-class ListClassController extends Controller
+class ClassController extends Controller
 {
     public $root = null;
     public $pageName = null;
@@ -27,7 +27,7 @@ class ListClassController extends Controller
     {
         $rootLink = $this->rootLink; // "admin/list-class"
         
-        $list_class = ListClass::with('Category')->get();
+        $list_class = Classroom::with('Category')->get();
         return view(
             "$rootLink/index",
             compact("list_class", "rootLink")
@@ -37,7 +37,7 @@ class ListClassController extends Controller
     public function add(){
         $rootLink = $this->rootLink; // "admin/list-class"
 
-        $category = category::select('id','title_category')->get();
+        $category = Category::select('id','title_category')->get();
         return view("$rootLink/add", compact("category", "rootLink"));
 
         // $list_class = ListClass::with('Category')->get();
@@ -61,7 +61,7 @@ public function doAdd(Request $request)
 
     $data = $request->all();
 
-    DB::table("list_class")->insert([
+    DB::table("classes")->insert([
         'title'        => $data['title'],
         'category_id'  => $data['category_id'],
         'desc'         => $data['desc'],
@@ -78,7 +78,7 @@ public function update($id)
     {
         $rootLink = $this->rootLink;
 
-        $list_class = ListClass::find($id);
+        $list_class = Classroom::find($id);
         $category = Category::where('id', '!=', $list_class->category_id)->get(['id', 'title_category']);
         return view(
             "$rootLink/update" ,compact("rootLink","list_class", "category"));
@@ -98,7 +98,7 @@ public function update($id)
 
         $data = $request->all();
 
-        DB::table("list_class")
+        DB::table("classes")
             ->where("id", $id)
             ->update([
                 'title'        => $data['title'],
@@ -117,7 +117,7 @@ public function update($id)
     {
         $rootLink = $this->rootLink;
 
-        DB::table("list_class")
+        DB::table("classes")
             ->where("id", $id)
             ->delete();
 
@@ -125,7 +125,4 @@ public function update($id)
 
         return redirect("$rootLink");
     }
-
-
-
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-use App\Models\ListClass;
+use App\Models\Classroom;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -23,7 +23,7 @@ class ClassController extends Controller
     {
         $rootLink = $this->rootLink;
 
-        $category = DB::table('category')->get();
+        $category = DB::table('categories')->get();
     
         return view("$rootLink/category",
         compact("category", "rootLink")
@@ -32,7 +32,7 @@ class ClassController extends Controller
 
     public function list( $cat)
     {
-        $class = ListClass::where('category_id', $cat)->get();
+        $class = Classroom::where('category_id', $cat)->get();
         $category = Category::find($cat);
         return view('class.list' ,compact('class','category'));
     }
@@ -41,8 +41,8 @@ class ClassController extends Controller
     {
         $rootLink = $this->rootLink;
 
-        $class= ListClass::find($id);
-        $select = ListClass::paginate(3);
+        $class= Classroom::find($id);
+        $select = Classroom::paginate(3);
         $category = Category::where('id', '==', $class->category_id)->get(['title_category']);
 
         // dd($category->title_category);

@@ -25,7 +25,7 @@ class WebinarController extends Controller
     public function index() {
         $rootLink = $this->rootLink;
 
-        $webinar = DB::table('webinar')->get();
+        $webinar = DB::table('webinars')->get();
         
         return view(
             "$rootLink/index",
@@ -69,7 +69,7 @@ class WebinarController extends Controller
         }
 
 
-        DB::table("webinar")->insert([
+        DB::table("webinars")->insert([
             'title'        => $data['title'],
             'date'         => $data['date'],
             'desc'         => $data['desc'],
@@ -91,7 +91,7 @@ class WebinarController extends Controller
     {
         $rootLink = $this->rootLink;
 
-        $webinar = DB::table('webinar')->where("id", $id)->first();
+        $webinar = DB::table('webinars')->where("id", $id)->first();
 
         return view(
             "$rootLink/update",
@@ -123,7 +123,7 @@ class WebinarController extends Controller
         }
 
        
-        DB::table("webinar")
+        DB::table("webinars")
         ->where("id", $id)
         ->update([
                 'title'        => $data['title'],
@@ -146,7 +146,7 @@ class WebinarController extends Controller
     {
         $rootLink = $this->rootLink;
 
-        DB::table("webinar")
+        DB::table("webinars")
             ->where("id", $id)
             ->delete();
 
@@ -154,12 +154,4 @@ class WebinarController extends Controller
 
         return redirect("$rootLink");
     }
-
-
-
-
-
-    
-
-    
 }

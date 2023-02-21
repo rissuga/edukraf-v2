@@ -4,10 +4,10 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\WebinarController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\ListClassController;
+use App\Http\Controllers\Admin\ClassController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ClassController;
+use App\Http\Controllers\ClassController as ClassFrontController;
 use App\Http\Controllers\WebinarController as WebinarFrontController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,9 +34,9 @@ Route::group([
     Route::group([
         'prefix' => 'class', 
     ], function () {
-        Route::get('category', [ClassController::class, 'index']);
-        Route::get('list{id}', [ClassController::class, 'list'])->name('list-class');
-        Route::get('detail{id}', [ClassController::class, 'detail'])->name('detail-class');
+        Route::get('category', [ClassFrontController::class, 'index']);
+        Route::get('list{id}', [ClassFrontController::class, 'list'])->name('list-class');
+        Route::get('detail{id}', [ClassFrontController::class, 'detail'])->name('detail-class');
     });
 
     Route::group([
@@ -107,11 +107,11 @@ Route::group([
     Route::group([
         'prefix' => 'list-class',
     ], function() {
-        Route::get('/', [ListClassController::class,'index']);
-        Route::get('add', [ListClassController::class, 'add']);
-        Route::post('do-add', [ListClassController::class, 'doAdd']);
-        Route::get('update/{id}', [ListClassController::class, 'update']);
-        Route::post('do-update/{id}', [ListClassController::class, 'doUpdate']);
-        Route::get('do-delete/{id}', [ListClassController::class, 'doDelete']);
+        Route::get('/', [ClassController::class,'index']);
+        Route::get('add', [ClassController::class, 'add']);
+        Route::post('do-add', [ClassController::class, 'doAdd']);
+        Route::get('update/{id}', [ClassController::class, 'update']);
+        Route::post('do-update/{id}', [ClassController::class, 'doUpdate']);
+        Route::get('do-delete/{id}', [ClassController::class, 'doDelete']);
     });
 });

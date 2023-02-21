@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ListClass extends Model
+class Classroom extends Model
 {
     use HasFactory;
-    protected $table = 'list_class';
+    protected $table = 'classes';
 
     public function Category()
     {

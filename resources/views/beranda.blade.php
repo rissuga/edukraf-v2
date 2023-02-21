@@ -173,7 +173,7 @@
                                         @else
                                             <span class="badge bg-success text-light mb-2">Selesai</span>
                                         @endif
-                                        <h5 class="mt-1"><b>{{ $web->title }}</b></h5>
+                                        <h5 class="mt-1 font-strong"><b>{{ $web->title }}</b></h5>
                                         <p class="font-size-12 text-grey"><i class="fa-solid fa-calendar"></i>
                                             <i class="bx bx-calendar"></i>{{ tgl_indo($web->date) }}
                                         </p>

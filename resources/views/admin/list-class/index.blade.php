@@ -41,7 +41,7 @@
                                 <th>Judul</th>
                                 <th>Link</th>
                                 <th>Deskripsi</th>
-                                <th>Aksi</th>
+                                <th width="160px">Aksi</th>
                             </thead>
                             <tbody>
                                 @foreach ($list_class as $key => $class)
