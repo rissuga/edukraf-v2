@@ -25,20 +25,26 @@ class ClassController extends Controller
 
         $category = DB::table('categories')->get();
     
-        return view("$rootLink/category",
-        compact("category", "rootLink")
-    );
+        return view(
+            "$rootLink/category",
+            compact("category", "rootLink")
+        );
     }
 
     public function list( $cat)
     {
+        $rootLink = $this->rootLink;
+
         $class = Classroom::where('category_id', $cat)->get();
         $category = Category::find($cat);
-        return view('class.list' ,compact('class','category'));
+        return view(
+            "$rootLink/list",
+            compact('class','category', "rootLink")
+        );
     }
 
     public function detail($id)
-    {
+    {   
         $rootLink = $this->rootLink;
 
         $class= Classroom::find($id);
@@ -46,7 +52,9 @@ class ClassController extends Controller
         $category = Category::where('id', '==', $class->category_id)->get(['title_category']);
 
         // dd($category->title_category);
-        return view("$rootLink/detail",
-        compact( "class", "rootLink", "select", "category"));
+        return view(
+            "$rootLink/detail",
+            compact( "class", "rootLink", "select", "category")
+        );
     }
 }

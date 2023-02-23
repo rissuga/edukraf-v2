@@ -9,6 +9,15 @@ body {
     font-family: 'Nunito', sans-serif !important;
 }
 
+#main {
+    background-color: #ffff;
+}
+
+#list-class {
+    background-color: #ffff;
+}
+
+
 /*--------------------------------------------------------------
 # Fonts
 --------------------------------------------------------------*/
@@ -50,6 +59,9 @@ body {
 .font-strong {
     color: #212529;
 }
+.font-weight-bold{
+font-weight: 700;
+}
 
 /*--------------------------------------------------------------
 # Color
@@ -58,7 +70,6 @@ body {
     color: rgb(142, 142, 142) !important;
 
 }
-
 
 /*--------------------------------------------------------------
   # Cards
@@ -198,6 +209,7 @@ body {
     position: absolute;
     border-radius: 0.5rem;
 }
+
 /* CARD WHY */
 
 /*--------------------------------------------------------------
@@ -216,7 +228,7 @@ body {
   # Text
 --------------------------------------------------------------*/
 
-.text-list{
+.text-list {
     list-style: none;
 }
 
@@ -238,9 +250,11 @@ body {
 .border-radius-1 {
     border-radius: 10px;
 }
+
 .border-radius-2 {
     border-radius: 15px;
 }
+
 .border-radius-3 {
     border-radius: 20px;
 }
@@ -248,24 +262,24 @@ body {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-  
-  .about .content ul {
+
+.about .content ul {
     list-style: none;
     padding: 0;
-  }
-  
-  .about .content ul li {
+}
+
+.about .content ul li {
     padding-bottom: 10px;
-    font-style: italic;
-  }
-  
-  .about .content ul i {
+    font-style: normal;
+}
+
+.about .content ul i {
     font-size: 20px;
     padding-right: 4px;
     color: #026231;
-  }
+}
 
-  .visi-misi .visi-misi-item {
+.visi-misi .visi-misi-item {
     box-sizing: content-box;
     padding: 10px 10px 10px 10px;
     margin: 30px 0px;
@@ -274,31 +288,28 @@ body {
     /* position: relative; */
     position: relative;
     background: #fff;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .about .content .learn-more-btn {
-      margin: 0 48px 0 0;
-      padding: 6px 18px;
+        margin: 0 48px 0 0;
+        padding: 6px 18px;
     }
-  }
+}
 
 
 /*--------------------------------------------------------------
 # Ensiklopedia
 --------------------------------------------------------------*/
 
-  .ensiklopedia .list-group .list-group-item  {
+.ensiklopedia .list-group .list-group-item {
     background: linear-gradient(270deg, #F1FEF7 0%, #FCFFFD 97.79%);
-    border: none; 
+    border: none;
     font-weight: 900;
-  }
+}
 
-  .ensiklopedia .list-group .list-group-item a {
+.ensiklopedia .list-group .list-group-item a {
     font-weight: 500;
     color: #212529;
-    font-style: italic;
-  }
-
- 
-
+    font-style: normal;
+}

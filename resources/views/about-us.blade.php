@@ -40,7 +40,7 @@
 
     <section id="about" class="about py-5">
         <div class="container" data-aos="fade-up">
-            <div class="section-title mb-5">
+            <div class="section-title mb-4">
                 <h3 class="font-strong text-center font-weight-1">VISI MISI Kabupaten Jember</h3>
             </div>
             <div class="row">

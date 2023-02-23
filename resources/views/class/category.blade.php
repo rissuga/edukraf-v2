@@ -20,7 +20,8 @@
             <div class="row">
                 @foreach ($category as $key => $cat)
                     <div class="col-md-3 d-flex align-items-stretch">
-                        <div class="card card-3 w-100 card-button" onclick="window.location='{{ route('list-class', $cat->id) }}'">
+                        <div class="card card-3 w-100 card-button"
+                            onclick="window.location='{{ url("$rootLink/list/$cat->id") }}'">
                             <div class="card-body">
                                 <div class="card-content p-3">
                                     <div class="box-icon mb-3 text-white">

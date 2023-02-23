@@ -38,9 +38,9 @@
                                 <div class="mb-2">
                                     <p>{{ $class->desc }}</p>
                                 </div>
-                                <div class="mb-2">
+                                <div class="mb-1">
                                     <label class="text-grey font-space-3 font-size-14">
-                                        {{ $class->category['title_category'] }}
+                                        Sumber Materi
                                     </label>
                                     {{-- <h4 class="font-strong"><b>Rp20.000</b></h4> --}}
                                 </div>
@@ -75,7 +75,7 @@
                 @foreach ($select as $key => $clsrm)
                     <div class="col-md-4 d-flex align-items-stretch">
                         <div class="card card-button card-default"
-                            onclick="window.location='{{ route('detail-class', $clsrm->id) }}'">
+                            onclick="window.location='{{ url("$rootLink/detail/$clsrm->id") }}'">
                             <div class="card-body">
                                 <img class="card-img-top" src="https://img.youtube.com/vi/{{ $clsrm->link }}/0.jpg"
                                     alt="Test" style="height: 300px; object-fit: cover; ">

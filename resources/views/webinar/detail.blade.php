@@ -122,7 +122,7 @@
             <div class="row">
                 @foreach ($select as $key => $web)
                     <div class="col-md-3 d-flex align-items-stretch">
-                        <div class="card card-2 card-button" onclick="window.location='{{ route('detail', $web->id) }}'">
+                        <div class="card card-2 card-button" onclick="window.location='{{ url("$rootLink/detail/$web->id") }}'">
                             <div class="card-body">
                                 <img src="{{ img_url($web->cover) }}" class="img-fluid w-100"
                                     style="height: 250px; object-fit: cover;">

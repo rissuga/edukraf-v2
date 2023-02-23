@@ -63,19 +63,18 @@
     <section class="py-5" id="list-class">
         <div class="container" data-aos="fade-up">
             <div class="my-5" id="card-type-2">
-
                 <div class="row justify-content-center mb-5 mt-3">
                     <div class="col-md-2 d-grid">
                         <a class="btn py-2 {{ empty(Request::segment(2)) ? 'btn-secondary' : 'btn-outline-secondary' }}"
-                            href="{{ route('webinar') }}">Semua</a>
+                            href="{{ url('webinar') }}">Semua</a>
                     </div>
                     <div class="col-md-2 d-grid">
                         <a class="btn py-2 {{ Request::segment(2) == 'soon' ? 'btn-secondary' : 'btn-outline-secondary' }}"
-                            href="{{ route('webinar-soon') }}" role="button">Akan Datang</a>
+                            href="{{ url('webinar/soon') }}" role="button">Akan Datang</a>
                     </div>
                     <div class="col-md-2 d-grid">
                         <a class="btn py-2 {{ Request::segment(2) == 'done' ? 'btn-secondary' : 'btn-outline-secondary' }}"
-                            href="{{ route('webinar-done') }}" role="button">Selesai</a>
+                            href="{{ url('webinar/done') }}" role="button">Selesai</a>
                     </div>
                 </div>
 
@@ -83,7 +82,7 @@
                     @foreach ($webinar as $key => $web)
                         <div class="col-md-3 d-flex align-items-stretch">
                             <div class="card card-2 card-button"
-                                onclick="window.location='{{ route('detail', $web->id) }}'">
+                                onclick="window.location='{{ url("$rootLink/detail/$web->id") }}'">
                                 <div class="card-body">
                                     <img src="{{ img_url($web->cover) }}" class="img-fluid w-100"
                                         style="height: 250px; object-fit: cover;">

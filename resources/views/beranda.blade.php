@@ -79,7 +79,7 @@
                 @foreach ($category as $key => $cat)
                     <div class="col-md-3 d-flex align-items-stretch">
                         <div class="card card-3 w-100 card-button"
-                            onclick="window.location='{{ route('list-class', $cat->id) }}'">
+                            onclick="window.location='{{ url('class/list', $cat->id) }}'">
                             <div class="card-body">
                                 <div class="card-content p-3">
                                     <div class="box-icon mb-3 text-white">
@@ -116,7 +116,7 @@
                 @foreach ($class as $key => $clsrm)
                     <div class="col-md-4 d-flex align-items-stretch">
                         <div class="card card-button card-default"
-                            onclick="window.location='{{ route('detail-class', $clsrm->id) }}'">
+                            onclick="window.location='{{ url('class/detail', $clsrm->id) }}'">
                             <div class="card-body">
                                 <img class="card-img-top" src="https://img.youtube.com/vi/{{ $clsrm->link }}/0.jpg"
                                     alt="Test" style="height: 300px; object-fit: cover; ">
@@ -150,11 +150,11 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="mb-1 font-strong"><strong>Webinar Kelas</strong></h4>
+                        <h4 class="mb-1 font-strong"><strong>Daftar Webinar</strong></h4>
                         <p class="text-grey mb-4">Webinar yang mungkin cocok untuk kamu</p>
                     </div>
                     <div class="col-md-6 text-md-end d-none d-md-block d-lg-block">
-                        <a href="{{ url('webinar/list') }}" class="btn btn-outline-success"><b>Lihat Semua</b></a>
+                        <a href="{{ url('webinar') }}" class="btn btn-outline-success"><b>Lihat Semua</b></a>
                     </div>
                 </div>
 
@@ -162,7 +162,7 @@
                     @foreach ($webinar as $key => $web)
                         <div class="col-md-3 d-flex align-items-stretch">
                             <div class="card card-2 card-button"
-                                onclick="window.location='{{ route('detail', $web->id) }}'">
+                                onclick="window.location='{{ url('webinar/detail', $web->id) }}'">
                                 <div class="card-body">
                                     <img src="{{ img_url($web->cover) }}" class="img-fluid w-100"
                                         style="height: 200px; object-fit: cover;">

@@ -89,14 +89,7 @@
                     <div class="footer clearfix mb-0 text-muted">
                         <div class="float-start">
                             <p>2023 &copy; <a target="_blank"
-                                    href="https://zuramai.github.io/mazer/demo/index.html">Mazer Template</a></p>
-                        </div>
-                        <div class="float-end">
-                            <p>
-                                App by <a target="_blank" href="https://rahmatrdn.github.io">Rahmat Ramadhan</a> |
-
-                                Template by <a target="_blank" href="https://saugi.me">Saugi</a>
-                            </p>
+                                    href="https://zuramai.github.io/mazer/demo/index.html">Edukraf</a></p>
                         </div>
                     </div>
                 </div>
@@ -119,7 +112,7 @@
 
         <script>
             var type = '<?= $message[1] ?>';
-            
+
             document.addEventListener("DOMContentLoaded", function() {
                 Swal.fire({
                     title: (type == 'success') ? 'Berhasil' : 'Informasi',

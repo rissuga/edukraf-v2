@@ -35,19 +35,19 @@ Route::group([
         'prefix' => 'class', 
     ], function () {
         Route::get('category', [ClassFrontController::class, 'index']);
-        Route::get('list{id}', [ClassFrontController::class, 'list'])->name('list-class');
-        Route::get('detail{id}', [ClassFrontController::class, 'detail'])->name('detail-class');
+        Route::get('list/{id}', [ClassFrontController::class, 'list']);
+        Route::get('detail/{id}', [ClassFrontController::class, 'detail']);
     });
 
     Route::group([
         'prefix' => 'webinar', 
     ], function () {
-        Route::get('list', [WebinarFrontController::class, 'list']);
-        Route::get('detail{id}', [WebinarFrontController::class, 'detail'])->name('detail');
-        Route::get('webinar', [WebinarFrontController::class, 'showAll'])->name('webinar');
-        Route::get('webinar-soon', [WebinarFrontController::class, 'showAll'])->name('webinar');
-        Route::get('webinar-soon', [WebinarFrontController::class, 'showSoon'])->name('webinar-soon');
-        Route::get('webinar-done', [WebinarFrontController::class, 'showDone'])->name('webinar-done');
+        Route::get('/', [WebinarFrontController::class, 'list']);
+        Route::get('detail/{id}', [WebinarFrontController::class, 'detail']);
+        // Route::get('/', [WebinarFrontController::class, 'showAll'])->name('webinar');
+        // Route::get('webinar-soon', [WebinarFrontController::class, 'showAll'])->name('webinar');
+        Route::get('soon', [WebinarFrontController::class, 'showSoon']);
+        Route::get('done', [WebinarFrontController::class, 'showDone']);
     });
 });
 
