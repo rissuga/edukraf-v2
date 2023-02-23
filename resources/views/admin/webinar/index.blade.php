@@ -71,7 +71,7 @@
             </div>
         </div>
     </div>
-    
+
     <section class="section">
         <div class="card">
             <div class="card-header ms-auto">
@@ -93,7 +93,7 @@
                                 <th>Status</th>
                                 <th>Pemateri</th>
                                 <th>Cover</th>
-                                <th width="160px">Aksi</th>
+                                <th width="200px">Aksi</th>
                             </thead>
                             <tbody>
                                 @foreach ($webinar as $key => $webinars)
@@ -114,6 +114,8 @@
 
 
                                         <td>
+                                            <a href="{{ url("webinar/detail/$webinars->id") }}"
+                                                class="btn btn-sm btn-outline-primary">Lihat</a>
                                             <a href="{{ url("$rootLink/update/$webinars->id") }}"
                                                 class="btn btn-sm btn-warning mb-md-0 mb-2">Edit</a>
                                             <a href="{{ url("$rootLink/do-delete/$webinars->id") }}"

@@ -46,7 +46,7 @@
                                     <a class="nav-link" href="{{ url('class/category') }}">Kelas</a>
                                 </li>
                                 <li class="nav-item me-md-2 me-0 mb-2 mb-md-0">
-                                    <a class="nav-link" aria-current="page" href="{{ url('webinar/list') }}">Webinar</a>
+                                    <a class="nav-link" aria-current="page" href="{{ url('webinar') }}">Webinar</a>
                                 </li>
                                 <li class="nav-item me-md-2 me-0 mb-2 mb-md-0">
                                     <a class="nav-link" href="{{ url('komunitas') }}">Komunitas</a>
@@ -56,7 +56,7 @@
                                 </li>
                             </ul>
 
-                            <div class="dropdown">
+                            {{-- <div class="dropdown">
                                 <a href="#" id="topbarUserDropdown"
                                     class="user-dropdown d-flex align-items-center dropend dropdown-toggle"
                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -81,7 +81,7 @@
                                         <a class="dropdown-item" href="auth-login.html">Logout</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> --}}
                         </div>
 
 
@@ -95,7 +95,7 @@
 
             @yield('content')
 
-            <footer>
+            {{-- <footer>
                 <div class="container mt-5 ">
                     <div class="footer clearfix mb-0 text-muted">
                         <div class="float-start">
@@ -110,7 +110,27 @@
                         </div>
                     </div>
                 </div>
-            </footer>
+            </footer> --}}
+
+            <section class="py-3 bg-dark text-white text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="container">
+                            <h5 class="text-white">Edukraf</h5>
+                            {{-- <img src="assets/img/log-white.png" alt="Logo White" class="img-fluid" width="300"> --}}
+                            <p class="mb-0">Website Edukasi Pelaku Ekonomi Kreatif</p>
+                            <p class="font-weight-bold mb-0">Dinas Pariwisata dan Kebudayaan</p>
+                            <p class="font-weight-bold">Kabupaten Jember</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <p class="mb-0">Made with 💖 by <a href="" target="_blank"
+                            class="link-light text-decoration-none"><b>Edukraf Team</b></a>
+                    </p>
+                </div>
+            </section>
         </div>
     </div>
     <script src="{{ asset('assets/mazer') }}/js/bootstrap.js"></script>
@@ -119,6 +139,14 @@
 
     <script src="{{ asset('assets/mazer') }}/extensions/apexcharts/apexcharts.min.js"></script>
     <script src="{{ asset('assets/mazer') }}/js/pages/dashboard.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+
+    <!-- Icons from Fontawesome -->
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/js/fontawesome.min.js"
+        integrity="sha256-CmI2IEcfp/ocwrmWKlpyn/Ms5CuLnZ2WWGa1nmooYvE=" crossorigin="anonymous"></script>
 </body>
 
 </html>

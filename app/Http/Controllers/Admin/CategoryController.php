@@ -25,7 +25,7 @@ class CategoryController extends Controller
     {
         $rootLink = $this->rootLink; // "admin/category"
         
-        $category = DB::table('category')->get();
+        $category = DB::table('categories')->get();
 
         return view(
             "$rootLink/index",
@@ -55,7 +55,7 @@ class CategoryController extends Controller
 
         $data = $request->all();
 
-        DB::table("category")->insert([
+        DB::table("categories")->insert([
             'title_category'      => $data['title_category'],
             'desc_category'       => $data['desc_category'],
         ]);
@@ -69,7 +69,7 @@ class CategoryController extends Controller
     {
         $rootLink = $this->rootLink;
 
-        $category = DB::table('category')->where("id", $id)->first();
+        $category = DB::table('categories')->where("id", $id)->first();
 
         return view(
             "$rootLink/update",
@@ -88,7 +88,7 @@ class CategoryController extends Controller
 
         $data = $request->all();
 
-        DB::table("category")
+        DB::table("categories")
             ->where("id", $id)
             ->update([
                 'title_category'      => $data['title_category'],
@@ -104,7 +104,7 @@ class CategoryController extends Controller
     {
         $rootLink = $this->rootLink;
 
-        DB::table("category")
+        DB::table("categories")
             ->where("id", $id)
             ->delete();
 

@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    protected $table = 'category';
+    protected $table = 'categories';
 
-    public function ListClass()
+    public function Classroom()
     {
-        return $this->hasMany(ListClass::class, 'category_id', 'id');
+    
+        return $this->hasMany(Classroom::class, 'category_id', 'id');
     }
 }
