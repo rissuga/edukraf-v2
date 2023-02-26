@@ -44,8 +44,8 @@
             <header class="mb-3">
                 <nav class="navbar navbar-expand-lg fixed-top bg-white">
                     <div class="container">
-                        <a class="navbar-brand " href="#">
-                            <img src="{{ asset('assets/logo-edukraf.svg') }}" alt="Logo Edukraf" width="100">
+                        <a href="{{ url('/') }}">
+                            <img src="{{ asset('assets/logo-edukraf.svg') }}" alt="Logo Edukraf" width="130">
                         </a>
 
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
