@@ -5,7 +5,7 @@
         <div class="col-lg-5 col-12">
             <div id="auth-left">
                 <div class="auth-logo">
-                    <h3>EDUKRAF</h3>
+                    <img src="{{ asset('assets/logo-edukraf-login.svg') }}" alt="Logo Edukraf" sizes="600">
                 </div>
                 <h1 class="auth-title">Login Page</h1>
                 <p class="auth-subtitle mb-5">

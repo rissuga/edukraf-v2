@@ -3,19 +3,38 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="Web Edukasi Ekonomi Kreatif">
+    <meta name="keywords" content="Edukraf, Ekraf, UMKM, Jember, Disbudpar Jember, Disbudpar,">
+    <meta name="author" content="Edukraf Team">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edukraf</title>
 
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/favicon/apple-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('assets/favicon/apple-icon-60x60.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/favicon/apple-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/favicon/apple-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/favicon/apple-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/favicon/apple-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/favicon/apple-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/favicon/apple-icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicon/apple-icon-180x180.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/favicon/android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/favicon/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('assets/favicon/manifest.json') }}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ asset('assets/favicon/ms-icon-144x144.png') }}">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--External CSS-->
     <link rel="stylesheet" href="{{ asset('assets/mazer') }}/css/main/app.css" />
-    <link rel="shortcut icon" href="{{ asset('assets/mazer') }}/images/logo/favicon.svg" type="image/x-icon" />
-    <link rel="shortcut icon" href="{{ asset('assets/mazer') }}/images/logo/favicon.png" type="image/png" />
-
     <link rel="stylesheet" href="{{ asset('assets/mazer') }}/css/shared/iconly.css" />
-
-
     <link rel="stylesheet" href="{{ asset('assets/pragmatic-ui') }}/css/custom.css">
     <link rel="stylesheet" href="{{ asset('assets/pragmatic-ui') }}/css/style.css">
 
+    <!--Box Icon-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -25,8 +44,8 @@
             <header class="mb-3">
                 <nav class="navbar navbar-expand-lg fixed-top bg-white">
                     <div class="container">
-                        <a class="navbar-brand font-space-3" href="#">
-                            Edukraf
+                        <a class="navbar-brand " href="#">
+                            <img src="{{ asset('assets/logo-edukraf.svg') }}" alt="Logo Edukraf" width="100">
                         </a>
 
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -35,12 +54,9 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-md-5 ps-0 mt-2 mt-md-0">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ps-md-5 ps-0 mt-2 mt-md-0">
                                 <li class="nav-item me-md-2 me-0 mb-2 mb-md-0">
                                     <a class="nav-link" aria-current="page" href="{{ url('/') }}">Beranda</a>
-                                </li>
-                                <li class="nav-item me-md-2 me-0 mb-2 mb-md-0">
-                                    <a class="nav-link" href="{{ url('ensiklopedia') }}">Ensiklopedia</a>
                                 </li>
                                 <li class="nav-item me-md-2 me-0 mb-2 mb-md-0">
                                     <a class="nav-link" href="{{ url('class/category') }}">Kelas</a>
@@ -50,6 +66,9 @@
                                 </li>
                                 <li class="nav-item me-md-2 me-0 mb-2 mb-md-0">
                                     <a class="nav-link" href="{{ url('komunitas') }}">Komunitas</a>
+                                </li>
+                                <li class="nav-item me-md-2 me-0 mb-2 mb-md-0">
+                                    <a class="nav-link" href="{{ url('ensiklopedia') }}">Kategori Ekraf</a>
                                 </li>
                                 <li class="nav-item me-md-2 me-0 mb-2 mb-md-0">
                                     <a class="nav-link" href="{{ url('tentang-kami') }}">Tentang Kami</a>

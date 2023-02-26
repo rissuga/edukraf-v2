@@ -11,11 +11,14 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $webinar = Webinar::orderBy('date', 'desc')->limit(8)->get();
+        $webinar  = Webinar::orderBy('date', 'desc')->limit(8)->get();
         $category = Category::all();
-        $class = Classroom::orderBy('created_at', 'asc')->limit(5)->get();
-        return view('beranda', compact('webinar', 'category', 'class'));
-        // return view("beranda");
+        $class    = Classroom::orderBy('created_at', 'asc')->limit(5)->get();
+        
+        return view(
+            'beranda', 
+            compact('webinar', 'category', 'class')
+        );
     }
 
     public function ensiklopedia()
@@ -32,10 +35,4 @@ class HomeController extends Controller
     {
         return view("about-us");
     }
-
-    public function fiturShow()
-    {
-        
-    }
-    
 }

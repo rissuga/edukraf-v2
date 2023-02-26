@@ -56,7 +56,7 @@
 
                 <div class="col-md-12">
                     <div class="mb-4">
-                        <a href="#" class="link-secondary text-light font-size-12 link-back">← Kembali</a>
+                        <a href="{{ url('webinar') }}" class="link-secondary text-light font-size-12 link-back">← Kembali</a>
                     </div>
                     <h1 class="font-strong"><b>{{ $webinar->title }}</b></h1>
                 </div>
@@ -122,7 +122,8 @@
             <div class="row">
                 @foreach ($select as $key => $web)
                     <div class="col-md-3 d-flex align-items-stretch">
-                        <div class="card card-2 card-button" onclick="window.location='{{ url("$rootLink/detail/$web->id") }}'">
+                        <div class="card card-2 card-button"
+                            onclick="window.location='{{ url("$rootLink/detail/$web->id") }}'">
                             <div class="card-body">
                                 <img src="{{ img_url($web->cover) }}" class="img-fluid w-100"
                                     style="height: 250px; object-fit: cover;">

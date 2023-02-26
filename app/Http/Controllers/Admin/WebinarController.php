@@ -16,7 +16,7 @@ class WebinarController extends Controller
 
     public function __construct()
     {
-        $this->root = "admin";
+        $this->root     = "admin";
         $this->pageName = "webinar";
 
         $this->rootLink = "$this->root/$this->pageName";
@@ -25,7 +25,7 @@ class WebinarController extends Controller
     public function index() {
         $rootLink = $this->rootLink;
 
-        $webinar = DB::table('webinars')->get();
+        $webinar  = DB::table('webinars')->get();
         
         return view(
             "$rootLink/index",
@@ -121,7 +121,6 @@ class WebinarController extends Controller
         } else {
             $path= ' ';
         }
-
        
         DB::table("webinars")
         ->where("id", $id)
@@ -134,7 +133,7 @@ class WebinarController extends Controller
                 'link_record'  => $data['link_record'],
                 'link_webinar' => $data['link_webinar'],
                 'speaker'      => $data['speaker'],
-                'cover'        => $path,
+                'cover'        => $path
             ]);
 
         $this->message("Data Berhasil Ubah", 'success');

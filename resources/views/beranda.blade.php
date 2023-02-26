@@ -62,7 +62,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center d-flex align-content-center">
-                    <img src="{{ asset('assets/pragmatic-ui/img/subsektor.png') }}" class="img-fluid" width="100%">
+                    <img src="{{ asset('assets/pragmatic-ui/img/img_home_page.svg') }}" alt="img_home_page" class="img-fluid"
+                        width="100%">
                 </div>
             </div>
 

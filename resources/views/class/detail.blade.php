@@ -6,7 +6,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="mb-4">
-                        <a href="#" class="link-secondary text-light font-size-12 link-back">← Kembali</a>
+                        <a href="{{ url('class/category') }}" class="link-secondary text-light font-size-12 link-back">←
+                            Kembali</a>
+
                     </div>
 
                     <p class="font-space-3 font-size-13 mb-1 text-uppercase text-grey">

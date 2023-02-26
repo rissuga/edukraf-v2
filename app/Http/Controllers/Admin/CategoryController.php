@@ -15,7 +15,7 @@ class CategoryController extends Controller
 
     public function __construct()
     {
-        $this->root = "admin";
+        $this->root     = "admin";
         $this->pageName = "category";
 
         $this->rootLink = "$this->root/$this->pageName";

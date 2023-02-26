@@ -36,7 +36,6 @@ class WebinarController extends Controller
         $select = DB::table('webinars')->paginate(4);
         $webinars = Webinar::orderBy('date', 'desc')->limit(2)->get();
 
-        // dd($webinar->cover);
         return view(
             "$rootLink/detail",
             compact( "webinar","webinars", "rootLink", "select")
@@ -48,7 +47,11 @@ class WebinarController extends Controller
         $rootLink = $this->rootLink;
 
         $webinar = DB::table('webinars')->get();
-        return view("$rootLink/list", compact('webinar'));
+
+        return view(
+            "$rootLink/list", 
+            compact('webinar')
+        );
     }
 
 
@@ -58,17 +61,24 @@ class WebinarController extends Controller
 
         $now = Carbon::now()->timestamp;
         $webinar = DB::table('webinars')->whereDate('date','>',now())->get();
-        // dd($webinar);
-        return view("$rootLink/list", compact('webinar', "rootLink"));
+
+        return view(
+            "$rootLink/list", 
+            compact('webinar', "rootLink")
+        );
     }
     
     public function showDone()
     {   
         $rootLink = $this->rootLink;
 
-        $now = Carbon::now()->timestamp;
+        $now     = Carbon::now()->timestamp;
         $webinar = Webinar::whereDate('date','<',now())->get();
-        return view("$rootLink/list", compact('webinar', "rootLink"));
+        
+        return view(
+            "$rootLink/list", 
+            compact('webinar', "rootLink")
+        );
     }
 
 }

@@ -37,6 +37,7 @@ class ClassController extends Controller
 
         $class = Classroom::where('category_id', $cat)->get();
         $category = Category::find($cat);
+        
         return view(
             "$rootLink/list",
             compact('class','category', "rootLink")
@@ -51,7 +52,6 @@ class ClassController extends Controller
         $select = Classroom::paginate(3);
         $category = Category::where('id', '==', $class->category_id)->get(['title_category']);
 
-        // dd($category->title_category);
         return view(
             "$rootLink/detail",
             compact( "class", "rootLink", "select", "category")
