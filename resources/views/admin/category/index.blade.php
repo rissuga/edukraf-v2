@@ -36,7 +36,6 @@
                     <div class="table-responsive">
                         <table class="table table-hover mb-0 ">
                             <thead>
-                                <th>No</th>
                                 <th>Kategori</th>
                                 <th>Deskripsi</th>
                                 <th width="160px">Aksi</th>
@@ -44,7 +43,6 @@
                             <tbody>
                                 @foreach ($category as $key => $categories)
                                     <tr>
-                                        <td scope="key"> {{ $key + 1 }}</td>
                                         <td>{{ $categories->title_category }}</td>
                                         <td>{{ $categories->desc_category }}</td>
                                         <td>

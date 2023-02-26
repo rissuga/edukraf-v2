@@ -85,7 +85,6 @@
                     <div class="table-responsive">
                         <table class="table table-hover mb-0 ">
                             <thead>
-                                <th>No</th>
                                 <th>Kategori</th>
                                 <th>Judul</th>
                                 <th>Deskripsi</th>
@@ -94,7 +93,6 @@
                             <tbody>
                                 @foreach ($list_class as $key => $class)
                                     <tr>
-                                        <td scope="key"> {{ $key + 1 }}</td>
                                         <td>{{ $class->Category['title_category'] }}</td>
                                         <td>{{ $class->title }}</td>
                                         <td>{{ substrwords($class->desc, 125) }}</td>

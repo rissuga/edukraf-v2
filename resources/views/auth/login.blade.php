@@ -63,15 +63,7 @@
                         <B>MASUK</B>
                     </button>
                 </form>
-                <div class="text-center mt-5 text-lg fs-4">
-                    <p class="text-gray-600">
-                        Belum punya akun?
-                        <a href="" class="font-bold">Daftar Sekarang</a>.
-                    </p>
-                    <p>
-                        <a class="font-bold" href="">Lupa Password</a>.
-                    </p>
-                </div>
+
             </div>
         </div>
         <div class="col-lg-7 d-none d-lg-block">

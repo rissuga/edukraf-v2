@@ -87,7 +87,6 @@
                     <div class="table-responsive">
                         <table class="table table-hover mb-0 ">
                             <thead>
-                                <th>No</th>
                                 <th>Judul</th>
                                 <th>Tanggal</th>
                                 <th>Status</th>
@@ -98,7 +97,6 @@
                             <tbody>
                                 @foreach ($webinar as $key => $webinars)
                                     <tr>
-                                        <td scope="key"> {{ $key + 1 }}</td>
 
                                         <td>{{ $webinars->title }}</td>
                                         <td>{{ tgl_indo($webinars->date) }}</td>

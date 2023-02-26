@@ -78,14 +78,15 @@
                     </div>
                 </div>
 
+
                 <div class="row">
                     @foreach ($webinar as $key => $web)
                         <div class="col-md-3 d-flex align-items-stretch">
                             <div class="card card-2 card-button"
-                                onclick="window.location='{{ url("$rootLink/detail/$web->id") }}'">
+                                onclick="window.location='{{ url('webinar/detail', $web->id) }}'">
                                 <div class="card-body">
                                     <img src="{{ img_url($web->cover) }}" class="img-fluid w-100"
-                                        style="height: 250px; object-fit: cover;">
+                                        style="height: 200px; object-fit: cover;">
 
                                     <div class="card-content p-3">
                                         @if (strtotime($web->date) >= strtotime(gmdate('Y-m-d', time() + 60 * 60 * 7)))
@@ -94,8 +95,8 @@
                                             <span class="badge bg-success text-light mb-2">Selesai</span>
                                         @endif
                                         <h5 class="mt-1 font-strong"><b>{{ $web->title }}</b></h5>
-                                        <p class="font-size-12 text-grey"><i class="fa-solid fa-calendar"></i>
-                                            <i class="bx bx-calendar"></i>{{ tgl_indo($web->date) }}
+                                        <p class="font-size-12 text-grey">
+                                            <i class="bx bx-calendar me-1"></i>{{ tgl_indo($web->date) }}
                                         </p>
                                         <small class="text-grey mb-0">{{ substrwords($web->desc, 80) }}
                                         </small>

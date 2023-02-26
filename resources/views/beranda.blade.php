@@ -122,15 +122,15 @@
                                 <img class="card-img-top" src="https://img.youtube.com/vi/{{ $clsrm->link }}/0.jpg"
                                     alt="Test" style="height: 300px; object-fit: cover; ">
                                 <div class="card-content p-1" style="width:auto;">
-                                    <a class="badge bg-primary text-light mt-2 mb-2" href="">
+                                    <a class="badge bg-primary text-light mt-3 mb-1" href="">
                                         {{ $clsrm->category['title_category'] }}</a>
-                                    <h5 class="mb-2 mt-2 font-weight-1"><b>{{ $clsrm->title }}</b></h5>
+                                    <h5 class="mb-3 mt-2 font-weight-1"><b>{{ $clsrm->title }}</b></h5>
                                     <small class="text-grey font-space-1 mb-2"> <i
                                             class="bx bxl-youtube"></i>&nbsp;{{ $clsrm->source }}
                                     </small>
                                     <div style="width: 800px;"></div>
                                     {{-- <p class="text-primary mb-0 mt-1 text-grey">
-                                        {{ substrwords($clsrm->desc, 100) }}</p> --}}
+                                    {{ substrwords($clsrm->desc, 100) }}</p> --}}
                                 </div>
                             </div>
                         </div>
@@ -175,8 +175,8 @@
                                             <span class="badge bg-success text-light mb-2">Selesai</span>
                                         @endif
                                         <h5 class="mt-1 font-strong"><b>{{ $web->title }}</b></h5>
-                                        <p class="font-size-12 text-grey"><i class="fa-solid fa-calendar"></i>
-                                            <i class="bx bx-calendar"></i>{{ tgl_indo($web->date) }}
+                                        <p class="font-size-12 text-grey">
+                                            <i class="bx bx-calendar me-1"></i>{{ tgl_indo($web->date) }}
                                         </p>
                                         <small class="text-grey mb-0">{{ substrwords($web->desc, 80) }}
                                         </small>

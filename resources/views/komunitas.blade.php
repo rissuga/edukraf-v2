@@ -8,20 +8,24 @@
                     <div>
                         <h3 class="font-weight-1 ">Belajar tekait Ekraf yang asik sekaligus jalin koneksi? <br>
                             Kenapa
-                            engga?</h3>
-                        <p class="text-grey font-size-16 fst-italic ">
+                            tidak?</h3>
+                        <p class="text-grey font-size-16">
                             <b>Ayo, segera join komunitas Ekraf! Belajar sekaligus menamah koneksi dengan sesama pelaku
                                 Ekraf yang ada di Kabupaten Jember.</b>
                         </p>
-                        <div>
-                            <a href="https://chat.whatsapp.com/Hied4siGehDBf0RlptDJEg" class="btn btn-success"><b>Temukan
-                                    Teman!</b></a>
+                        <div class="mb-3">
+                            <a href="https://chat.whatsapp.com/Hied4siGehDBf0RlptDJEg" class="btn btn-success"><b>Gabung
+                                    komunitas</b></a>
                         </div>
                     </div>
+                    <img class="mt-2" src="{{ asset('assets/pragmatic-ui/img/group_ilustrasi.svg') }}" alt="Group Ilustras"
+                        width="500">
+
                 </div>
 
             </div>
-
+        </div>
+        <div class="container text-center py-5">
         </div>
         </div>
     </section>

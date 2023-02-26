@@ -51,7 +51,6 @@
                                         <i class="bx bxl-youtube"></i>&nbsp;{{ $class->source }}
                                     </small>
                                 </div>
-                                <hr class="text-grey">
                                 {{-- Rencana tombol checklist tonton --}}
                                 {{-- <div>
                                     <a href="" class="btn btn-success"><b>Beli Sekarang!</b></a>
@@ -77,14 +76,14 @@
                 @foreach ($select as $key => $clsrm)
                     <div class="col-md-4 d-flex align-items-stretch">
                         <div class="card card-button card-default"
-                            onclick="window.location='{{ url("$rootLink/detail/$clsrm->id") }}'">
+                            onclick="window.location='{{ url('class/detail', $clsrm->id) }}'">
                             <div class="card-body">
                                 <img class="card-img-top" src="https://img.youtube.com/vi/{{ $clsrm->link }}/0.jpg"
                                     alt="Test" style="height: 300px; object-fit: cover; ">
                                 <div class="card-content p-1" style="width:auto;">
-                                    <a class="badge bg-primary text-light mt-2 mb-2" href="">
+                                    <a class="badge bg-primary text-light mt-3 mb-1" href="">
                                         {{ $clsrm->category['title_category'] }}</a>
-                                    <h5 class="mb-2 mt-2 font-weight-1"><b>{{ $clsrm->title }}</b></h5>
+                                    <h5 class="mb-3 mt-2 font-weight-1"><b>{{ $clsrm->title }}</b></h5>
                                     <small class="text-grey font-space-1 mb-2"> <i
                                             class="bx bxl-youtube"></i>&nbsp;{{ $clsrm->source }}
                                     </small>

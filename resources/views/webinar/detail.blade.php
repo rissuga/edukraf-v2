@@ -68,7 +68,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ img_url($webinar->cover) }}" class="img-fluid" alt="">
+                    <img src="{{ img_url($webinar->cover) }}" class="img-fluid" alt="Cover Webinar">
                 </div>
                 <div class="col-md-6">
                     <div class="card card-panel-2">
@@ -78,15 +78,15 @@
                                     <p>{{ $webinar->desc }}</p>
                                 </div>
                                 <div class="mb-2">
-                                    <label class="text-grey font-space-3 font-size-14 mb-1"> <i class="bx bx-user"></i>
-                                        {{ $webinar->speaker }}
-                                    </label>
+                                    <label class="text-grey font-space-3 font-size-14 mb-1">Pemateri</label>
+                                    <p class="text-grey"><i class="bx bx-user"></i>&nbsp;{{ $webinar->speaker }}</p>
+                                    <label class="text-grey font-space-3 font-size-14 mb-1">Tanggal Webinar</label>
+
                                     <p class="text-grey "><i class="bx bx-calendar"></i>&nbsp;{{ tgl_indo($webinar->date) }}
                                     </p>
                                     {{-- <h4 class="font-strong"><b>Rp20.000</b></h4> --}}
                                 </div>
 
-                                <hr class="text-grey">
                                 @if (strtotime($webinar->date) >= strtotime(gmdate('Y-m-d', time() + 60 * 60 * 7)))
                                     <div class="course-info d-flex justify-content-between align-items-center">
                                         <h5><i class="bx bx-link"></i> Link pendaftaran</h5>
@@ -123,10 +123,10 @@
                 @foreach ($select as $key => $web)
                     <div class="col-md-3 d-flex align-items-stretch">
                         <div class="card card-2 card-button"
-                            onclick="window.location='{{ url("$rootLink/detail/$web->id") }}'">
+                            onclick="window.location='{{ url('webinar/detail', $web->id) }}'">
                             <div class="card-body">
                                 <img src="{{ img_url($web->cover) }}" class="img-fluid w-100"
-                                    style="height: 250px; object-fit: cover;">
+                                    style="height: 200px; object-fit: cover;">
 
                                 <div class="card-content p-3">
                                     @if (strtotime($web->date) >= strtotime(gmdate('Y-m-d', time() + 60 * 60 * 7)))
@@ -135,8 +135,8 @@
                                         <span class="badge bg-success text-light mb-2">Selesai</span>
                                     @endif
                                     <h5 class="mt-1 font-strong"><b>{{ $web->title }}</b></h5>
-                                    <p class="font-size-12 text-grey"><i class="fa-solid fa-calendar"></i>
-                                        <i class="bx bx-calendar"></i>{{ tgl_indo($web->date) }}
+                                    <p class="font-size-12 text-grey">
+                                        <i class="bx bx-calendar me-1"></i>{{ tgl_indo($web->date) }}
                                     </p>
                                     <small class="text-grey mb-0">{{ substrwords($web->desc, 80) }}
                                     </small>
