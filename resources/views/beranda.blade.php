@@ -55,7 +55,7 @@
             <div class="row mx-3">
                 <div class="col-md-6 d-flex align-items-center mb-md-0 mb-4">
                     <div>
-                        <h1 class="font-weight-1">Cari Wawasan Kreatifmu <br> Disini </h1>
+                        <h1 class="font-weight-1">Cari Wawasan <span class="text-success">Kreatifmu</span></h1>
                         <p class="text-grey font-size-20">
                             <b>Ikuti berbagai macam kelas dan webinar untuk meningkatkan Keahlianmu!</b>
                         </p>
