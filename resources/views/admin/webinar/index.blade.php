@@ -113,7 +113,7 @@
 
                                         <td>
                                             <a href="{{ url("webinar/detail/$webinars->id") }}"
-                                                class="btn btn-sm btn-outline-primary">Lihat</a>
+                                                class="btn btn-sm btn-outline-primary" target="_blank">Lihat</a>
                                             <a href="{{ url("$rootLink/update/$webinars->id") }}"
                                                 class="btn btn-sm btn-warning mb-md-0 mb-2">Edit</a>
                                             <a href="{{ url("$rootLink/do-delete/$webinars->id") }}"

@@ -99,7 +99,7 @@
 
                                         <td>
                                             <a href="{{ url("class/detail/$class->id") }}"
-                                                class="btn btn-sm btn-outline-primary">Lihat</a>
+                                                class="btn btn-sm btn-outline-primary" target="_blank">Lihat</a>
                                             <a href="{{ url("$rootLink/update/$class->id") }}"
                                                 class="btn btn-sm btn-warning mb-md-0 mb-2">Edit</a>
                                             <a href="{{ url("$rootLink/do-delete/$class->id") }}"
