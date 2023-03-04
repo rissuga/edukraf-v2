@@ -27,6 +27,12 @@
                 <span> Kategori Kelas</span>
             </a>
         </li>
+        <li class="sidebar-item {{ is_page('comunity') ? 'active' : '' }} ">
+            <a href="{{ url('admin/comunity') }}" class="sidebar-link">
+                <i class="bi bi-chat-fill"></i>
+                <span> Komunitas</span>
+            </a>
+        </li>
 
         {{-- <li class="sidebar-item has-sub {{ is_page('example') ? 'active' : '' }}">
             <a href="#" class="sidebar-link">

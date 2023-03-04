@@ -26,11 +26,6 @@ class HomeController extends Controller
         return view("ensiklopedia");
     }
 
-    public function komunitas()
-    {
-        return view("komunitas");
-    }
-
     public function aboutUs()
     {
         return view("about-us");
