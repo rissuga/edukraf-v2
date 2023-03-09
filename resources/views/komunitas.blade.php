@@ -55,7 +55,7 @@
                     Kenapa
                     tidak?</h3>
                 <p class="text-grey font-size-16">
-                    <b>Ayo, segera join komunitas Ekraf! Belajar sekaligus menamah koneksi dengan sesama pelaku
+                    <b>Ayo, segera join komunitas Ekraf! Belajar sekaligus menambah koneksi dengan sesama pelaku
                         Ekraf yang ada di Kabupaten Jember.</b>
                 </p>
             </div>

@@ -154,7 +154,7 @@
 
                     <hr>
 
-                    <p class="mb-0">Made with ðŸ’– by <a href="" target="_blank"
+                    <p class="mb-0">by <a href="" target="_blank"
                             class="link-light text-decoration-none"><b>Edukraf Team</b></a>
                     </p>
                 </div>
