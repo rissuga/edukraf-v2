@@ -1,6 +1,6 @@
-# Welcome to Mazer App!
+# Welcome to Edukraf App!
 
-Mazer App is Laravel Example Project for Newbie Programmer! We made simple, easy to use, and easy to learn. 
+Edukraf App is Laravel Example Project for Newbie Programmer! We made simple, easy to use, and easy to learn. 
 
 
 ## Requirement
