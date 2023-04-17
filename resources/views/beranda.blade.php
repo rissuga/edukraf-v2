@@ -50,20 +50,20 @@
         }
     @endphp
 
-
     <section class="py-5">
         <div class="container py-5 section-header">
             <div class="row mx-3">
                 <div class="col-md-6 d-flex align-items-center mb-md-0 mb-4">
                     <div>
-                        <h1 class="font-weight-1">Cari Wawasan Kreatifmu <br> Disini </h1>
+                        <h1 class="font-weight-1">Cari Wawasan <span class="text-success">Kreatifmu</span></h1>
                         <p class="text-grey font-size-20">
                             <b>Ikuti berbagai macam kelas dan webinar untuk meningkatkan Keahlianmu!</b>
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 text-center d-flex align-content-center">
-                    <img src="{{ asset('assets/pragmatic-ui/img/subsektor.png') }}" class="img-fluid" width="100%">
+                    <img src="{{ asset('assets/pragmatic-ui/img/img_home_page.svg') }}" alt="img_home_page" class="img-fluid"
+                        width="100%">
                 </div>
             </div>
 
@@ -77,53 +77,23 @@
             <p class="text-grey mb-4">Kelas yang mungkin cocok untuk kamu</p>
 
             <div class="row">
-
-                <div class="col-md-3 d-flex align-items-stretch">
-                    <div class="card card-3 w-100 card-button" onclick="window.location='{{ url('class/list') }}'">
-                        <div class="card-body">
-
-                            <div class="card-content p-3">
-                                <div class="box-icon mb-3 text-white">
-                                    <i class="bx bxs-book mb-3 text-primary"></i>
+                @foreach ($category as $key => $cat)
+                    <div class="col-md-3 d-flex align-items-stretch">
+                        <div class="card card-3 w-100 card-button"
+                            onclick="window.location='{{ url('class/list', $cat->id) }}'">
+                            <div class="card-body">
+                                <div class="card-content p-3">
+                                    <div class="box-icon mb-3 text-white">
+                                        <i class="bx bxs-book mb-3 text-primary"></i>
+                                    </div>
+                                    <p class="mb-0 text-grey">
+                                        <b>{{ $cat->title_category }}</b>
+                                    </p>
                                 </div>
-                                <p class="mb-0 text-grey">
-                                    <b>Sales & Marketing</b>
-                                </p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3 d-flex align-items-stretch">
-                    <div class="card card-3 w-100 card-button" onclick="window.location='plant-category.html'">
-                        <div class="card-body">
-
-                            <div class="card-content p-3">
-                                <div class="box-icon mb-3 text-white">
-                                    <i class="bx bxs-book mb-3 text-primary"></i>
-                                </div>
-                                <p class="mb-0 text-grey">
-                                    <b>Legalitas</b>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex align-items-stretch">
-                    <div class="card card-3 w-100 card-button" onclick="window.location='plant-category.html'">
-                        <div class="card-body">
-
-                            <div class="card-content p-3">
-                                <div class="box-icon mb-3 text-white">
-                                    <i class="bx bxs-book mb-3 text-primary"></i>
-                                </div>
-                                <p class="mb-0 text-grey">
-                                    <b>Bisnis Kuliner</b>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </div>
         </div>
@@ -139,91 +109,38 @@
                     <p class="text-grey mb-4">Kelas yang mungkin cocok untuk kamu</p>
                 </div>
                 <div class="col-md-6 text-md-end d-none d-md-block d-lg-block">
-                    <a href="{{ url('class/list') }}" class="btn btn-outline-success"><b>Lihat Semua</b></a>
+                    <a href="{{ url('class/category') }}" class="btn btn-outline-success"><b>Lihat Semua</b></a>
                 </div>
             </div>
 
             <div class="row">
                 @foreach ($class as $key => $clsrm)
-                    <div class="col-md-3 d-flex align-items-stretch">
-                        <div class="card card-button card-default" onclick="window.location='{{ url('class/detail') }}'">
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <div class="card card-button card-default"
+                            onclick="window.location='{{ url('class/detail', $clsrm->id) }}'">
                             <div class="card-body">
-                                <!-- <div class="position-absolute p-2 badge bg-warning m-2">
-                                                                            <p class="mb-0">Sold Out!</p>                                                                                                                                                                                                                                                                                                                                                                                            </div> -->
                                 <img class="card-img-top" src="https://img.youtube.com/vi/{{ $clsrm->link }}/0.jpg"
                                     alt="Test" style="height: 300px; object-fit: cover; ">
                                 <div class="card-content p-1" style="width:auto;">
-                                    <a class="badge bg-primary text-light mb-2" href="">
+                                    <a class="badge bg-primary text-light mt-3 mb-1" href="">
                                         {{ $clsrm->category['title_category'] }}</a>
-                                    <h5 class="mb-0 mt-2 font-weight-1"><b>{{ $clsrm->title }}</b></h5>
+                                    <h5 class="mb-3 mt-2 font-weight-1"><b>{{ $clsrm->title }}</b></h5>
                                     <small class="text-grey font-space-1 mb-2"> <i
                                             class="bx bxl-youtube"></i>&nbsp;{{ $clsrm->source }}
                                     </small>
-
                                     <div style="width: 800px;"></div>
-                                    <p class="text-primary mb-0 mt-1 text-grey">
-                                        {{ substrwords($clsrm->desc, 100) }}</p>
+                                    {{-- <p class="text-primary mb-0 mt-1 text-grey">
+                                    {{ substrwords($clsrm->desc, 100) }}</p> --}}
                                 </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
-
-
-                <div class="col-md-3 d-flex align-items-stretch">
-                    <div class="card card-button card-default" onclick="window.location='plant-detail.html'">
-                        <div class="card-body">
-                            <img class="card-img-top" src="{{ asset('assets/pragmatic-ui/img/kelas2.jpg') }}" alt="Test"
-                                style="height: 300px; object-fit: cover; ">
-                            <div class="card-content p-1" style="width:auto;">
-                                <h5 class="mb-0 mt-2 font-weight-1"><b>Belajar pentingnya legalitas bagi pemilik toko
-                                        (UMKM)</b></h5>
-                                <small class="text-grey font-space-1 mb-2">Legalitas</small>
-
-                                <div style="width: 800px;"></div>
-                                <p class="text-primary mb-0 mt-1"><b>Rp400.000</b></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex align-items-stretch">
-                    <div class="card card-button card-default" onclick="window.location='plant-detail.html'">
-                        <div class="card-body">
-                            <img class="card-img-top" src="{{ asset('assets/pragmatic-ui/img/kelas3.jpg') }}"
-                                alt="Test" style="height: 300px; object-fit: cover; ">
-                            <div class="card-content p-1" style="width:auto;">
-                                <h5 class="mb-0 mt-2 font-weight-1"><b>2 Jam Pahami Digital Marketing untuk Memulai Bisnis
-                                        Anda</b></h5>
-                                <small class="text-grey font-space-1 mb-2">Sales & Marketing</small>
-
-                                <div style="width: 800px;"></div>
-                                <p class="text-primary mb-0 mt-1"><b>Rp400.000</b></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex align-items-stretch">
-                    <div class="card card-button card-default" onclick="window.location='plant-detail.html'">
-                        <div class="card-body">
-                            <img class="card-img-top" src="{{ asset('assets/pragmatic-ui/img/kelas4.jpg') }}"
-                                alt="Test" style="height: 300px; object-fit: cover; ">
-                            <div class="card-content p-1" style="width:auto;">
-                                <h5 class="mb-0 mt-2 font-weight-1"><b>Laris Manis Berjualan di Ecommerce</b></h5>
-                                <small class="text-grey font-space-1 mb-2">Sales & Marketing</small>
-
-                                <div style="width: 800px;"></div>
-                                <p class="text-primary mb-0 mt-1"><b>Rp400.000</b></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
             <div class="text-center mt-2 d-block d-md-none d-lg-none">
                 <a href="" class="btn btn-outline-success"><b>Lihat Semua</b></a>
             </div>
         </div>
-
     </section>
     <!-- END OF DAFTAR KELAS -->
 
@@ -231,15 +148,25 @@
     <section class="py-5" id="list-class">
         <div class="container">
             <div class="my-5" id="card-type-2">
-                <h5 class="font-space-1"><b>Daftar Webinar</b></h5>
-                <p class="text-grey">Webinar yang mungkin cocok untuk kamu</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="mb-1 font-strong"><strong>Daftar Webinar</strong></h4>
+                        <p class="text-grey mb-4">Webinar yang mungkin cocok untuk kamu</p>
+                    </div>
+                    <div class="col-md-6 text-md-end d-none d-md-block d-lg-block">
+                        <a href="{{ url('webinar') }}" class="btn btn-outline-success"><b>Lihat Semua</b></a>
+                    </div>
+                </div>
+
                 <div class="row">
                     @foreach ($webinar as $key => $web)
-                        <div class="col-md-4 d-flex align-items-stretch mb-4">
-                            <div class="card card-button card-2" onclick="window.location='{{ url('webinar/detail') }}'">
+                        <div class="col-md-3 d-flex align-items-stretch">
+                            <div class="card card-2 card-button"
+                                onclick="window.location='{{ url('webinar/detail', $web->id) }}'">
                                 <div class="card-body">
-                                    <img src="{{ img_url($web->cover) }}" class="card-img-top"
-                                        alt="{{ $web->title }}" style="height: 300px; object-fit: cover;">
+                                    <img src="{{ img_url($web->cover) }}" class="img-fluid w-100"
+                                        style="height: 200px; object-fit: cover;">
 
                                     <div class="card-content p-3">
                                         @if (strtotime($web->date) >= strtotime(gmdate('Y-m-d', time() + 60 * 60 * 7)))
@@ -247,12 +174,12 @@
                                         @else
                                             <span class="badge bg-success text-light mb-2">Selesai</span>
                                         @endif
-                                        <h5><b>{{ $web->title }}</b></h5>
-                                        <small class="mb-2">
-                                            <i class="bx bx-calendar"></i>{{ tgl_indo($web->date) }}
-                                        </small> <br>
-                                        <br>
-                                        <p class=" text-grey">{{ substrwords($web->desc, 100) }}</p>
+                                        <h5 class="mt-1 font-strong"><b>{{ $web->title }}</b></h5>
+                                        <p class="font-size-12 text-grey">
+                                            <i class="bx bx-calendar me-1"></i>{{ tgl_indo($web->date) }}
+                                        </p>
+                                        <small class="text-grey mb-0">{{ substrwords($web->desc, 80) }}
+                                        </small>
                                     </div>
                                 </div>
                             </div>

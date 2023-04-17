@@ -71,7 +71,7 @@
             </div>
         </div>
     </div>
-    
+
     <section class="section">
         <div class="card">
             <div class="card-header ms-auto">
@@ -87,18 +87,16 @@
                     <div class="table-responsive">
                         <table class="table table-hover mb-0 ">
                             <thead>
-                                <th>No</th>
                                 <th>Judul</th>
                                 <th>Tanggal</th>
                                 <th>Status</th>
                                 <th>Pemateri</th>
                                 <th>Cover</th>
-                                <th width="160px">Aksi</th>
+                                <th width="200px">Aksi</th>
                             </thead>
                             <tbody>
                                 @foreach ($webinar as $key => $webinars)
                                     <tr>
-                                        <td scope="key"> {{ $key + 1 }}</td>
 
                                         <td>{{ $webinars->title }}</td>
                                         <td>{{ tgl_indo($webinars->date) }}</td>
@@ -114,6 +112,8 @@
 
 
                                         <td>
+                                            <a href="{{ url("webinar/detail/$webinars->id") }}"
+                                                class="btn btn-sm btn-outline-primary" target="_blank">Lihat</a>
                                             <a href="{{ url("$rootLink/update/$webinars->id") }}"
                                                 class="btn btn-sm btn-warning mb-md-0 mb-2">Edit</a>
                                             <a href="{{ url("$rootLink/do-delete/$webinars->id") }}"

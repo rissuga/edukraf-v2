@@ -9,7 +9,32 @@
             </a>
         </li>
 
-        <li class="sidebar-item has-sub {{ is_page('example') ? 'active' : '' }}">
+        <li class="sidebar-item {{ is_page('webinar') ? 'active' : '' }} ">
+            <a href="{{ url('admin/webinar') }}" class="sidebar-link">
+                <i class="bi bi-camera-video-fill"></i>
+                <span>Webinar</span>
+            </a>
+        </li>
+        <li class="sidebar-item {{ is_page('list-class') ? 'active' : '' }} ">
+            <a href="{{ url('admin/list-class') }}" class="sidebar-link">
+                <i class="bi bi-collection-play-fill"></i>
+                <span>Daftar Kelas</span>
+            </a>
+        </li>
+        <li class="sidebar-item {{ is_page('category') ? 'active' : '' }} ">
+            <a href="{{ url('admin/category') }}" class="sidebar-link">
+                <i class="bi bi-bookmarks-fill"></i>
+                <span> Kategori Kelas</span>
+            </a>
+        </li>
+        <li class="sidebar-item {{ is_page('comunity') ? 'active' : '' }} ">
+            <a href="{{ url('admin/comunity') }}" class="sidebar-link">
+                <i class="bi bi-chat-fill"></i>
+                <span> Komunitas</span>
+            </a>
+        </li>
+
+        {{-- <li class="sidebar-item has-sub {{ is_page('example') ? 'active' : '' }}">
             <a href="#" class="sidebar-link">
                 <i class="bi bi-menu-app-fill"></i>
                 <span>Edukraf Menu</span>
@@ -19,8 +44,6 @@
                     <a href="{{ url('admin/webinar') }}" class="sidebar-link">
                         Webinar
                     </a>
-
-
                 </li>
                 <li class="submenu-item">
                     <a href="{{ url('admin/category') }}">Kategori Kelas</a>
@@ -29,13 +52,11 @@
                     <a href="{{ url('admin/list-class') }}">Daftar Kelas</a>
                 </li>
             </ul>
-        </li>
-
-        <li class="sidebar-title text-gray-1 text-space-2">Example CRUD</li>
+        </li> --}}
 
         <li class="sidebar-item {{ is_page('user') ? 'active' : '' }}">
             <a href="{{ url('admin/user') }}" class="sidebar-link">
-                <i class="bi bi-person"></i>
+                <i class="bi bi-person-fill"></i>
                 <span>Pengguna</span>
             </a>
         </li>

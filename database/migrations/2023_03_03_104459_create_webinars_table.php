@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('webinar', function (Blueprint $table) {
+        Schema::create('webinars', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->date('date');
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('time_start')->nullable();
             $table->string('time_end')->nullable();
             $table->timestamps();
-        }); 
+        });
     }
 
     /**
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('webinar');
+        Schema::dropIfExists('webinars');
     }
 };

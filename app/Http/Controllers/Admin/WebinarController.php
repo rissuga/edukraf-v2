@@ -16,7 +16,7 @@ class WebinarController extends Controller
 
     public function __construct()
     {
-        $this->root = "admin";
+        $this->root     = "admin";
         $this->pageName = "webinar";
 
         $this->rootLink = "$this->root/$this->pageName";
@@ -25,7 +25,7 @@ class WebinarController extends Controller
     public function index() {
         $rootLink = $this->rootLink;
 
-        $webinar = DB::table('webinar')->get();
+        $webinar  = DB::table('webinars')->get();
         
         return view(
             "$rootLink/index",
@@ -69,7 +69,7 @@ class WebinarController extends Controller
         }
 
 
-        DB::table("webinar")->insert([
+        DB::table("webinars")->insert([
             'title'        => $data['title'],
             'date'         => $data['date'],
             'desc'         => $data['desc'],
@@ -91,7 +91,7 @@ class WebinarController extends Controller
     {
         $rootLink = $this->rootLink;
 
-        $webinar = DB::table('webinar')->where("id", $id)->first();
+        $webinar = DB::table('webinars')->where("id", $id)->first();
 
         return view(
             "$rootLink/update",
@@ -121,9 +121,8 @@ class WebinarController extends Controller
         } else {
             $path= ' ';
         }
-
        
-        DB::table("webinar")
+        DB::table("webinars")
         ->where("id", $id)
         ->update([
                 'title'        => $data['title'],
@@ -134,7 +133,7 @@ class WebinarController extends Controller
                 'link_record'  => $data['link_record'],
                 'link_webinar' => $data['link_webinar'],
                 'speaker'      => $data['speaker'],
-                'cover'        => $path,
+                'cover'        => $path
             ]);
 
         $this->message("Data Berhasil Ubah", 'success');
@@ -146,7 +145,7 @@ class WebinarController extends Controller
     {
         $rootLink = $this->rootLink;
 
-        DB::table("webinar")
+        DB::table("webinars")
             ->where("id", $id)
             ->delete();
 
@@ -154,12 +153,4 @@ class WebinarController extends Controller
 
         return redirect("$rootLink");
     }
-
-
-
-
-
-    
-
-    
 }

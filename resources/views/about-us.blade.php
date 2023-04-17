@@ -40,7 +40,7 @@
 
     <section id="about" class="about py-5">
         <div class="container" data-aos="fade-up">
-            <div class="section-title mb-5">
+            <div class="section-title mb-4">
                 <h3 class="font-strong text-center font-weight-1">VISI MISI Kabupaten Jember</h3>
             </div>
             <div class="row">
@@ -72,27 +72,6 @@
                         style="padding-top: 100px; padding-left: 60px;">
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="about" class="about py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-                    <img src="{{ asset('assets/pragmatic-ui/img/phentalix.png') }}" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-                    <h2 class="font-strong font-weight-1">Sinergi Penthalix</h2>
-                    <br>
-                    <p>
-                        Kekuatan pembangunan suatu negara atau wilayah perlu didukung oleh semua elemen
-                        yang ada. Tidak bisa percepatan pembangunan hanya bisa dilakukan satu pihak. Maka
-                        hadir konsep pembangunan 'pentahelix' dimana unsur pemerintah, masyarakat atau komunitas,
-                        akademisi, pengusaha, dan media bersatu membangun kebersamaan dalam pembangunan.
-                    </p>
-                </div>
-            </div>
-        </div>
         </div>
     </section>
 @endsection
